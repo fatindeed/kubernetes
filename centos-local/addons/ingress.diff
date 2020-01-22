@@ -1,0 +1,10 @@
+diff minikube-master/deploy/addons/ingress/ingress-dp.yaml ingress/ingress-dp.yaml
+42c42
+<         image: gcr.io/google_containers/defaultbackend:1.4
+---
+>         image: registry.cn-hangzhou.aliyuncs.com/google_containers/defaultbackend:1.4
+86a87
+>       hostNetwork: true
+129,130d129
+<         # use minikube IP address in ingress status field
+<         - --report-node-internal-ip-address

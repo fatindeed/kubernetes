@@ -1,0 +1,19 @@
+diff minikube-master/deploy/addons/efk/elasticsearch-rc.yaml efk/elasticsearch-rc.yaml
+37c37
+<         image: k8s.gcr.io/elasticsearch:v5.6.2
+---
+>         image: docker.elastic.co/elasticsearch/elasticsearch:6.5.1
+65c65
+<       - image: registry.hub.docker.com/library/alpine:3.6
+---
+>       - image: alpine:3.6
+diff minikube-master/deploy/addons/efk/fluentd-es-rc.yaml efk/fluentd-es-rc.yaml
+34c34
+<         image: k8s.gcr.io/fluentd-elasticsearch:v2.0.2
+---
+>         image: registry.cn-hangzhou.aliyuncs.com/google_containers/fluentd-elasticsearch:v2.3.2
+diff minikube-master/deploy/addons/efk/kibana-rc.yaml efk/kibana-rc.yaml
+37c37
+<         image: docker.elastic.co/kibana/kibana:5.6.2
+---
+>         image: docker.elastic.co/kibana/kibana:6.5.1

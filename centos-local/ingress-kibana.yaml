@@ -1,0 +1,17 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: ingress-kibana
+  namespace: kube-system
+spec:
+  tls:
+  - hosts:
+    - kibana.cluster.eainc.com
+    secretName: cluster-tls-certificate
+  rules:
+  - host: kibana.cluster.eainc.com
+    http:
+      paths:
+      - backend:
+          serviceName: kibana-logging
+          servicePort: 5601

@@ -1,0 +1,17 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: ingress-dashboard
+  namespace: kube-system
+spec:
+  tls:
+  - hosts:
+    - dashboard.minikube.local
+    secretName: minikube-tls-certificate
+  rules:
+  - host: dashboard.minikube.local
+    http:
+      paths:
+      - backend:
+          serviceName: kubernetes-dashboard
+          servicePort: 80

@@ -1,0 +1,5 @@
+diff minikube-master/deploy/addons/dashboard/dashboard-dp.yaml dashboard/dashboard-dp.yaml
+40c40
+<         image: k8s.gcr.io/kubernetes-dashboard-amd64:v1.10.0
+---
+>         image: registry.cn-hangzhou.aliyuncs.com/google_containers/kubernetes-dashboard-amd64:v1.10.0

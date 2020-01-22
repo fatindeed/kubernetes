@@ -1,0 +1,17 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: ingress-kibana
+  namespace: kube-system
+spec:
+  tls:
+  - hosts:
+    - kibana.minikube.local
+    secretName: minikube-tls-certificate
+  rules:
+  - host: kibana.minikube.local
+    http:
+      paths:
+      - backend:
+          serviceName: kibana-logging
+          servicePort: 5601
